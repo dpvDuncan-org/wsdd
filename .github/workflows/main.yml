@@ -31,8 +31,8 @@ jobs:
         username: ${{ vars.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Install jq
-      uses: dcarbone/install-jq-action@v2
+    - name: Download wsdd.py
+      run: curl -o wsdd.py -L "https://github.com/christgau/wsdd/raw/master/src/wsdd.py"
 
     - name: Build
       uses: docker/build-push-action@v5
